@@ -8,7 +8,6 @@ import { searchMovies, getPopularMovies } from "../services/api";
 
 const Home = () => {
 	const [searchQuery, setSearchQuery] = useState("");
-
 	const [movies, setMovies] = useState([]);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -35,13 +34,17 @@ loadPopularMovies();
     if(loading) return
 
     setLoading(true)
+
     try {
       const searchResults = await searchMovies(searchQuery)
-    } catch (errorr) {
-      console.log(errorr)
+	  setMovies(searchResults);
+	  setError(null);
+    } catch (err) {
+      console.log(err)
+	  setError("Failed to search movies")
     }finally{
-      setSearchQuery("")
-      setError("Failed to search movies")
+      setLoading(false);
+      
     }
 	};
 

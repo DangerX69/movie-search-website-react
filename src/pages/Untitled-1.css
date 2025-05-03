@@ -1,0 +1,24 @@
+body {
+	background: #fefaed;
+	margin: 0px;
+}
+div {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background: #9a5dcb;
+	border-radius: 19px 19px 0 0;
+	top: 150px;
+}
+#a {
+	top: 70px;
+	left: 160px;
+}
+#b {
+	border-radius: 19px 0 19px 0;
+	left: 80px;
+}
+#c {
+	border-radius: 0 19px 0 19px;
+	left: 240px;
+}
